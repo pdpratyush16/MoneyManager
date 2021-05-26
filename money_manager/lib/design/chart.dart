@@ -27,6 +27,19 @@ class ExpenseChart extends StatelessWidget {
           ),
         ],
       ),
+      behaviors: [
+        charts.DatumLegend(
+          position: charts.BehaviorPosition.end,
+          outsideJustification: charts.OutsideJustification.start,
+          horizontalFirst: false,
+          desiredMaxColumns: 1,
+          cellPadding: const EdgeInsets.only(right: 4, bottom: 4),
+          entryTextStyle: charts.TextStyleSpec(
+            fontSize: 12,
+            color: charts.MaterialPalette.white,
+          ),
+        ),
+      ],
     );
   }
 }

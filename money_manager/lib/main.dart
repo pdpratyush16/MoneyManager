@@ -1,3 +1,5 @@
+// @dart=2.9
+
 import 'package:flutter/material.dart';
 import './screens/home.dart';
 
@@ -31,7 +33,6 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Quicksand',
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
