@@ -28,7 +28,7 @@ class Header extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     return Container(
       width: double.infinity,
-      height: mediaQuery.size.height * 4,
+      height: mediaQuery.size.height * 0.4,
       color: primaryColor,
       child: Padding(
         padding: const EdgeInsets.all(12.0),

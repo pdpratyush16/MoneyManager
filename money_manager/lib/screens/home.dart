@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager/design/header.dart';
+import 'package:money_manager/design/transactions.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,9 +8,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  double _ht = 0.55;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white.withOpacity(0.9),
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
@@ -34,14 +37,20 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Stack(
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Header(),
-            ],
-          ),
-        ],
+      body: SafeArea(
+        child: Stack(
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Header(),
+              ],
+            ),
+            TransactionCard(_ht),
+            // SizedBox(
+            //   height: 2,
+            // ),
+          ],
+        ),
       ),
     );
   }
