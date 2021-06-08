@@ -13,11 +13,11 @@ class Header extends StatelessWidget {
       colorFn: (Expense expense, _) =>
           charts.ColorUtil.fromDartColor(expense.color),
       data: [
-        Expense('Business1', 149.99, Color(0xff40abd5)),
-        Expense('Business2', 149.99, Color(0xff40abd5)),
-        Expense('Business3', 149.99, Color(0xff40abd5)),
-        Expense('Business4', 149.99, Color(0xff40abd5)),
-        Expense('Business5', 149.99, Color(0xff40abd5)),
+        Expense('Food', 143, Color(0xff40abd5)),
+        Expense('Pleasure', 129, Color(0xffe8505b)),
+        Expense('Entertainment', 149, Color(0xfffe91ca)),
+        Expense('Shopping', 129, Color(0xfff6d743)),
+        Expense('Miscellaneous', 99, Color(0xfff57b51)),
       ],
     ),
   ];
@@ -41,14 +41,83 @@ class Header extends StatelessWidget {
             ),
             SizedBox(height: 14),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 OutlinedButton(
                   onPressed: () {},
-                  style: ButtonStyle(),
-                  child: Container(),
+                  // borderSide: BorderSide(),
+                  // style: ButtonStyle(
+                  //   shape: ,
+                  // ),
+                  // TODO: Make border radius and shape
+                  child: Container(
+                    width: 124,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.playlist_add,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          'Add expenses',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                FlatButton(
+                  onPressed: () {},
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Container(
+                    width: 72,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Reports',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: primaryColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Icon(
+                          Icons.navigate_next,
+                          color: primaryColor,
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ],
-            )
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 12),
+              child: Text(
+                'Transactions',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ],
         ),
       ),

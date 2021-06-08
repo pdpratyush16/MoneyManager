@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {},
         ),
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'Money Manager',
           style: TextStyle(
             fontSize: 16.0,
@@ -34,8 +34,14 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Column(
-        children: <Widget>[Header()],
+      body: Stack(
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Header(),
+            ],
+          ),
+        ],
       ),
     );
   }
