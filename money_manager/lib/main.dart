@@ -1,6 +1,8 @@
 // @dart=2.9
 
 import 'package:flutter/material.dart';
+import 'package:money_manager/models/transactions.dart';
+import 'package:provider/provider.dart';
 import './screens/home.dart';
 
 void main() {
@@ -24,14 +26,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Money Manager',
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-      theme: ThemeData(
-        primarySwatch: primaryColor,
-        fontFamily: 'Quicksand',
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return ChangeNotifierProvider(
+      create: (context) => Transactions(),
+      child: MaterialApp(
+        title: 'Money Manager',
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+        theme: ThemeData(
+          primarySwatch: primaryColor,
+          fontFamily: 'Quicksand',
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
       ),
     );
   }

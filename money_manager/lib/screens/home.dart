@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager/design/header.dart';
-import 'package:money_manager/design/transactions.dart';
+import 'package:money_manager/design/transactionCard.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(0.9),
+      backgroundColor: Colors.white.withOpacity(0.8),
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
