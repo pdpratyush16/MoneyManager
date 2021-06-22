@@ -4,6 +4,9 @@ import 'package:money_manager/models/expense.dart';
 import './chart.dart';
 
 class Header extends StatelessWidget {
+  final Function addTransaction;
+  const Header(this.addTransaction);
+
   static List<charts.Series<Expense, String>> _series = [
     charts.Series<Expense, String>(
       id: 'Expense',
@@ -44,7 +47,7 @@ class Header extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: addTransaction(),
                   // borderSide: BorderSide(),
                   // style: ButtonStyle(
                   //   shape: ,

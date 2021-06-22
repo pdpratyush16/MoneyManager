@@ -9,6 +9,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double _ht = 0.55;
+
+  void _addTransaction() {
+    setState(() {
+      _ht = 0.08;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,20 +44,18 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: SafeArea(
-        child: Stack(
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                Header(),
-              ],
-            ),
-            TransactionCard(_ht),
-            // SizedBox(
-            //   height: 2,
-            // ),
-          ],
-        ),
+      body: Stack(
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Header(_addTransaction),
+            ],
+          ),
+          TransactionCard(_ht),
+          // SizedBox(
+          //   height: 2,
+          // ),
+        ],
       ),
     );
   }

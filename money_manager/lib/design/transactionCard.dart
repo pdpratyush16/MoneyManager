@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:money_manager/design/newItem.dart';
 import 'package:money_manager/models/transactions.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class TransactionCard extends StatefulWidget {
@@ -32,11 +34,73 @@ class _TransactionCardState extends State<TransactionCard> {
               topRight: Radius.circular(12),
             ),
           ),
-          child: ListView.builder(
-              itemCount: providedTransaction.transactions.length,
-              itemBuilder: (context, i) {
-                return SizedBox();
-              }),
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: 60,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: 8,
+                        right: 12,
+                      ),
+                      child: Text(
+                        'Details',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(6),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                _date--;
+                              });
+                            },
+                            child: Icon(Icons.arrow_left),
+                          ),
+                          Text(
+                            '$_date ${DateFormat('MMMM YYYY').format(DateTime.now())}',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                _date++;
+                              });
+                            },
+                            child: Icon(Icons.arrow_right),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: providedTransaction.transactions.length,
+                    itemBuilder: (context, i) {
+                      return TransactionItem(
+                          providedTransaction.transactions[i]);
+                    }),
+              ),
+            ],
+          ),
         ),
       ),
     );

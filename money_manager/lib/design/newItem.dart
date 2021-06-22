@@ -24,6 +24,28 @@ class TransactionItem extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+        title: Text(
+          transaction.title,
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        subtitle: Text(
+          transaction.category,
+          style: TextStyle(
+            fontSize: 12,
+          ),
+        ),
+        trailing: Text(
+          transaction.value.toString(),
+          style: const TextStyle(
+            fontSize: 12,
+            color: Colors.red,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }
