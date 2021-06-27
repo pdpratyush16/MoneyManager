@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => Transactions(),
       child: MaterialApp(
-        title: 'Money Manager',
+        title: 'Money Man',
         debugShowCheckedModeBanner: false,
         home: HomePage(),
         theme: ThemeData(

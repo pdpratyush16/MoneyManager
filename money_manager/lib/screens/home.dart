@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
         title: Text(
-          'Money Manager',
+          'Money Man',
           style: TextStyle(
             fontSize: 16.0,
             fontFamily: 'Montserrat',

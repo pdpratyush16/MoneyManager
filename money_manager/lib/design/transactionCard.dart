@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager/design/newItem.dart';
 import 'package:money_manager/models/transactions.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:intl/intl.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:provider/provider.dart';
 
 class TransactionCard extends StatefulWidget {

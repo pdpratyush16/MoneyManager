@@ -46,13 +46,15 @@ class Header extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                OutlinedButton(
+                OutlineButton(
                   onPressed: addTransaction(),
-                  // borderSide: BorderSide(),
-                  // style: ButtonStyle(
-                  //   shape: ,
-                  // ),
-                  // TODO: Make border radius and shape
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: Colors.white,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                   child: Container(
                     width: 124,
                     child: Row(
