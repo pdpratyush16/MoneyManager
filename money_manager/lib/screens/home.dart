@@ -11,9 +11,9 @@ class _HomePageState extends State<HomePage> {
   double _ht = 0.55;
 
   void _addTransaction() {
-    setState(() {
-      _ht = 0.08;
-    });
+    // setState(() {
+    //   _ht = 0.08;
+    // });
   }
 
   @override
